@@ -1,0 +1,28 @@
+.principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.image {
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.peliculas {
+    display: flex;
+    flex-direction: row;
+}
+
+.series {
+    display: flex;
+    flex-direction: row;
+}
+
+.caratula  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

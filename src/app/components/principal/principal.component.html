@@ -1,0 +1,16 @@
+<div class='principal'>
+    <h2>Peliculas Recientes</h2>
+    <div class="peliculas">
+        <div *ngFor="let pelicula of peliculasData" class="caratula">
+            <img class="image" src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ pelicula.poster_path }}">
+            <p>{{ pelicula.title }}</p>
+        </div>
+    </div>
+    <h2>Series Recientes</h2>
+    <div class="series">
+        <div *ngFor="let serie of seriesData" class="caratula">
+            <img class="image" src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ serie.poster_path }}">
+            <p>{{ serie.name }}</p>
+        </div>
+    </div>
+</div>
