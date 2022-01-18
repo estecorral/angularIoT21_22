@@ -7,12 +7,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from "./modules/material/material.module";
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PrincipalComponent } from './components/principal/principal.component';
+import { PeliculasListComponent } from './components/peliculas-list/peliculas-list.component';
+import { SeriesListComponent } from './components/series-list/series-list.component';
+import { PeliculaComponent } from './components/pelicula/pelicula.component';
+import { SerieComponent } from './components/serie/serie.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    PeliculasListComponent,
+    SeriesListComponent,
+    PeliculaComponent,
+    SerieComponent
   ],
   imports: [
     BrowserModule,

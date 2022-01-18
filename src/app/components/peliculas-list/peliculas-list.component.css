@@ -1,0 +1,16 @@
+.listado {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+mat-card-content{
+    width: 220px;
+}
+
+mat-card-header {
+    width: 220px;
+}
+
+.card {
+    margin: 5px;
+}
