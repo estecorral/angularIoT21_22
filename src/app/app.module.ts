@@ -11,6 +11,8 @@ import { PeliculasListComponent } from './components/peliculas-list/peliculas-li
 import { SeriesListComponent } from './components/series-list/series-list.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { SerieComponent } from './components/serie/serie.component';
+import { PeliculasService } from './services/peliculas.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,9 +28,12 @@ import { SerieComponent } from './components/serie/serie.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PeliculasService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

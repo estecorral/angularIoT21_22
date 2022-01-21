@@ -1,3 +1,9 @@
+.peliculasList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .listado {
     display: flex;
     flex-direction: row;

@@ -1,1 +1,12 @@
-<h1>{{ titulo }}</h1>
+<mat-progress-bar mode="indeterminate" *ngIf="!pelicula"></mat-progress-bar>
+<div class="pelicula" *ngIf="pelicula">
+    <div class="cabecera">
+        <div class="caratula">
+            <img class="image" src="https://image.tmdb.org/t/p/w220_and_h330_face/{{ pelicula.poster_path }}">
+        </div>
+    </div>
+    <div class="info">
+        <h2>{{ pelicula.title }}</h2>
+        Fecha: {{ pelicula.release_date | date: "dd/MM/yyyy" }}
+    </div>
+</div>

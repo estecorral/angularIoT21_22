@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import series from '../../../assets/series.json';
 import peliculas from '../../../assets/movies.json';
 import { Router } from '@angular/router';
-
+import { PeliculasService } from 'src/app/services/peliculas.service';
+import { PeliculaComponent } from '../pelicula/pelicula.component';
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
@@ -11,12 +12,14 @@ import { Router } from '@angular/router';
 export class PrincipalComponent implements OnInit {
 
   public seriesData: any = series.slice(0, 5);
-  public peliculasData: any = peliculas.slice(0, 5);
-  constructor(private router: Router) { }
+  public peliculasData: any = [];
+  constructor(private router: Router, private peliculasService: PeliculasService) { }
 
   ngOnInit(): void {
-    console.log(this.seriesData);
-    console.log(this.peliculasData);
+    this.peliculasService.getUpcoming().subscribe((data: any) => {
+      console.log(data);
+      this.peliculasData = data;
+    });
   }
 
   goToPelicula(id: string, title: string) {
