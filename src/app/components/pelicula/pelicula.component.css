@@ -1,0 +1,52 @@
+.pelicula {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cabecera {
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    z-index: 2;
+}
+
+.image {
+    margin-top: 20px;
+    margin-left: 40px;
+    border-radius: 10px;
+}
+
+.info {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+.caratula {
+    z-index: 2;
+}
+
+.transparencia {
+    position: absolute;
+    opacity: 0.6;
+    background-color: white;
+    z-index: 1;
+}
+.creditos {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+mat-card {
+    margin: 2.5px;
+}
+
+mat-card-header {
+    max-width: 100px;
+}

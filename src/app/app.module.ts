@@ -13,6 +13,7 @@ import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { SerieComponent } from './components/serie/serie.component';
 import { PeliculasService } from './services/peliculas.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PuntuacionComponent } from './components/puntuacion/puntuacion.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     PeliculasListComponent,
     SeriesListComponent,
     PeliculaComponent,
-    SerieComponent
+    SerieComponent,
+    PuntuacionComponent
   ],
   imports: [
     BrowserModule,

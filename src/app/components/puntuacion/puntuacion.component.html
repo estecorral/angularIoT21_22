@@ -1,0 +1,17 @@
+<div class="estrellas">
+    Componente Hijo:
+    <mat-icon aria-hidden="false" *ngIf="puntuacion < 2" (click)="sendPuntuacion(2)">star_outline</mat-icon>
+    <mat-icon aria-hidden="false" *ngIf="puntuacion >= 2" (click)="sendPuntuacion(2)">star</mat-icon>
+
+    <mat-icon aria-hidden="false" *ngIf="puntuacion < 4" (click)="sendPuntuacion(4)">star_outline</mat-icon>
+    <mat-icon aria-hidden="false" *ngIf="puntuacion >= 4" (click)="sendPuntuacion(4)">star</mat-icon>
+
+    <mat-icon aria-hidden="false" *ngIf="puntuacion < 6" (click)="sendPuntuacion(6)">star_outline</mat-icon>
+    <mat-icon aria-hidden="false" *ngIf="puntuacion >= 6" (click)="sendPuntuacion(6)">star</mat-icon>
+
+    <mat-icon aria-hidden="false" *ngIf="puntuacion < 8" (click)="sendPuntuacion(8)">star_outline</mat-icon>
+    <mat-icon aria-hidden="false" *ngIf="puntuacion >= 8" (click)="sendPuntuacion(8)">star</mat-icon>
+
+    <mat-icon aria-hidden="false" *ngIf="puntuacion < 10" (click)="sendPuntuacion(10)">star_outline</mat-icon>
+    <mat-icon aria-hidden="false" *ngIf="puntuacion === 10" (click)="sendPuntuacion(10)">star</mat-icon>
+</div>
