@@ -14,6 +14,9 @@ import { SerieComponent } from './components/serie/serie.component';
 import { PeliculasService } from './services/peliculas.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PuntuacionComponent } from './components/puntuacion/puntuacion.component';
+import { FormularioTemplateComponent } from './components/formulario-template/formulario-template.component';
+import { FormsModule } from '@angular/forms';
+import { RegistroConfirmarComponent } from './components/registro-confirmar/registro-confirmar.component';
 
 @NgModule({
   declarations: [
@@ -24,14 +27,17 @@ import { PuntuacionComponent } from './components/puntuacion/puntuacion.componen
     SeriesListComponent,
     PeliculaComponent,
     SerieComponent,
-    PuntuacionComponent
+    PuntuacionComponent,
+    FormularioTemplateComponent,
+    RegistroConfirmarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     PeliculasService
