@@ -25,6 +25,6 @@ export class RegistroConfirmarComponent implements OnInit {
     this.router.navigate(['']);
   }
   editar() {
-    this.router.navigate(['template'], {state: {'data': this.data.registro}});
+    this.router.navigate(['reactivo'], {state: {'data': this.data.registro}});
   }
 }

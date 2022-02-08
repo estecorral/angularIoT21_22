@@ -29,7 +29,85 @@
             matInput>
             <mat-error>Campo con formato incorrecto</mat-error>
         </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+            type="password"
+            formControlName="password"
+            matInput>
+            <mat-error>Contraseña demasiado corta</mat-error>
+        </mat-form-field>
         
-        <button mat-raised-button color="primary" type="submit">Registrar</button>
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input
+            type="password"
+            formControlName="password2"
+            matInput>
+            <mat-error>Contraseña demasiado corta</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Teléfono</mat-label>
+            <input
+            type="tel"
+            formControlName="telefono"
+            matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>País</mat-label>
+            <mat-select formControlName="pais">
+                <mat-option *ngFor="let pais of paises" [value]="pais.pais">{{ pais.pais }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Ciudad</mat-label>
+            <mat-select formControlName="ciudad">
+                <mat-option *ngFor="let ciudad of paises" [value]="ciudad.capital">{{ ciudad.capital }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div class="direccion" formGroupName="direccion">
+
+            <mat-form-field appearance="outline">
+                <mat-label>Calle</mat-label>
+                <input
+                type="text"
+                formControlName="calle"
+                matInput>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Número</mat-label>
+                <input
+                type="number"
+                formControlName="numero"
+                matInput>
+            </mat-form-field>
+
+        </div>
+
+         <mat-form-field appearance="outline">
+                <mat-label>Fecha de nacimiento</mat-label>
+                <input matInput 
+                [matDatepicker]="picker" 
+                name="nacimiento"
+                formControlName="nacimiento">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-radio-group formControlName="genero">
+            <mat-label>Género: </mat-label>
+            <mat-radio-button value="M">Masculino</mat-radio-button>
+            <mat-radio-button value="F">Femenino</mat-radio-button>
+        </mat-radio-group>
+
+        <button mat-raised-button color="primary" type="submit" *ngIf="formularioRegistro.status === 'INVALID'" disabled>Registrar</button>
+        <button mat-raised-button color="primary" type="submit" *ngIf="formularioRegistro.status !== 'INVALID'">Registrar</button>
     </form>
+    <button mat-raised-button (click)="borrarDatos()">Limpiar</button>
 </div>
