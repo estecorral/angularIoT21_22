@@ -1,0 +1,35 @@
+<div class="body">
+    <h1>Formulario Reactivo</h1>
+    <form [formGroup]="formularioRegistro" (ngSubmit)="sendForm()">
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Nombre</mat-label>
+            <input 
+            type="text"
+            placeholder="nombre"
+            formControlName="nombre"
+            matInput>
+            <mat-error>Campo requerido, introduzca almenos 3 carácteres</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Apellidos</mat-label>
+            <input 
+            type="text"
+            formControlName="apellidos"
+            matInput>
+            <mat-error>Campo requerido, introduzca almenos 5 carácteres</mat-error>
+        </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+            type="text"
+            formControlName="email"
+            matInput>
+            <mat-error>Campo con formato incorrecto</mat-error>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" type="submit">Registrar</button>
+    </form>
+</div>

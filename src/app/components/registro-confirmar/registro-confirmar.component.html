@@ -1,1 +1,22 @@
-<p>registro-confirmar works!</p>
+<div class="body">
+    <h2>Confirmar datos de registro</h2>
+    <mat-list>
+        <mat-list-item>Nombre: {{ data.registro.nombre }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Apellidos: {{ data.registro.apellidos }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Email: {{ data.registro.email }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Teléfono: {{ data.registro.telefono }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Ciudad: {{ data.registro.ciudad }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>País: {{ data.registro.pais }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Fecha de nacimiento: {{ data.registro.nacimiento | date: "dd/MM/yyyy" }}</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>Género: {{ data.registro.genero }}</mat-list-item>
+    </mat-list>
+    <button mat-raised-button (click)="sendData()" color="primary">Confimar</button>
+    <button mat-raised-button (click)="editar()">Editar</button>
+</div>

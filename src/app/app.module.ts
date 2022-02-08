@@ -15,8 +15,9 @@ import { PeliculasService } from './services/peliculas.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PuntuacionComponent } from './components/puntuacion/puntuacion.component';
 import { FormularioTemplateComponent } from './components/formulario-template/formulario-template.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegistroConfirmarComponent } from './components/registro-confirmar/registro-confirmar.component';
+import { FormularioReactivoComponent } from './components/formulario-reactivo/formulario-reactivo.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RegistroConfirmarComponent } from './components/registro-confirmar/regi
     SerieComponent,
     PuntuacionComponent,
     FormularioTemplateComponent,
-    RegistroConfirmarComponent
+    RegistroConfirmarComponent,
+    FormularioReactivoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { RegistroConfirmarComponent } from './components/registro-confirmar/regi
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     PeliculasService

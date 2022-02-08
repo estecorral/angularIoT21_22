@@ -15,6 +15,16 @@ export class FormularioTemplateComponent implements OnInit {
     apellidos: '',
     email: ''
   }
+  datosRegistro = {
+    nombre: '',
+    apellidos: '',
+    email: '',
+    telefono: '',
+    ciudad: '',
+    pais: '',
+    nacimiento: '',
+    genero: ''
+  };
   ciudades = ['León', 'Ponferrada', 'Astorga', 'Bembibre', 'Toreno'];
   paises: any[] = [];
   minDate: Date;
@@ -23,7 +33,7 @@ export class FormularioTemplateComponent implements OnInit {
     const currentYear = new Date().getFullYear();
     this.minDate = new Date(currentYear - 100, 0, 1);
     this.maxDate = new Date(currentYear + 0, 0, 0);
-    console.log(currentYear);
+    this.getData();
   }
 
   ngOnInit(): void {
@@ -31,6 +41,14 @@ export class FormularioTemplateComponent implements OnInit {
       this.paises = paises;
       console.log(this.paises);
     })
+  }
+
+  getData() {
+    if(this.router.getCurrentNavigation()?.extras.state) {
+      const data = this.router.getCurrentNavigation()?.extras.state; 
+      this.datosRegistro = data?.['data'];
+      console.log(this.datosRegistro);
+    }
   }
 
   sendData(form: NgForm) {

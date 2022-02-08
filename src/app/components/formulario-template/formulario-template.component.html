@@ -9,7 +9,7 @@
             placeholder="Nombre"
             minlength="3"
             required
-            ngModel>
+            [ngModel]="datosRegistro.nombre">
             <mat-icon matSuffix>account_circle</mat-icon>
             <mat-hint>Nombre</mat-hint>
         </mat-form-field>
@@ -21,7 +21,7 @@
             placeholder="apellidos"
             minlength="5"
             required
-            ngModel>
+            [ngModel]="datosRegistro.apellidos">
             <mat-icon matSuffix>account_circle</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
@@ -32,7 +32,7 @@
             placeholder="Email"
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             required
-            ngModel>
+            [ngModel]="datosRegistro.email">
             <mat-icon matSuffix>alternate_email</mat-icon>
             <mat-hint>ex. pepito@mail.com</mat-hint>
         </mat-form-field>
@@ -46,18 +46,18 @@
             minlength="9"
             maxlength="9"
             required
-            ngModel>
+            [ngModel]="datosRegistro.telefono">
             <mat-icon matSuffix>call</mat-icon>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Ciudad</mat-label>
-            <mat-select ngModel name="ciudad" required>
+            <mat-select [ngModel]="datosRegistro.ciudad" name="ciudad" required>
                 <mat-option *ngFor="let ciudad of paises" value="{{ ciudad.capital }}">{{ ciudad.capital }}</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>País</mat-label>
-            <mat-select name="pais" ngModel required>
+            <mat-select name="pais" [ngModel]="datosRegistro.pais" required>
                 <mat-option *ngFor="let pais of paises" value="{{ pais.pais }}">{{ pais.pais }}</mat-option>
             </mat-select>
         </mat-form-field>
@@ -69,11 +69,11 @@
             [min]="minDate"
             [max]="maxDate"
             required
-            ngModel>
+            [ngModel]="datosRegistro.nacimiento">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
-        <mat-radio-group aria-label="Select an option" name="genero" ngModel required>
+        <mat-radio-group aria-label="Select an option" name="genero" [ngModel]="datosRegistro.genero" required>
             <mat-radio-button value="M">Masculino</mat-radio-button>
             <mat-radio-button value="F">Femenino</mat-radio-button>
         </mat-radio-group>

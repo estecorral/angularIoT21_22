@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FormularioReactivoComponent } from './components/formulario-reactivo/formulario-reactivo.component';
 import { FormularioTemplateComponent } from './components/formulario-template/formulario-template.component';
 import { PeliculaComponent } from './components/pelicula/pelicula.component';
 import { PeliculasListComponent } from './components/peliculas-list/peliculas-list.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'serie', component: SerieComponent},
   {path: 'template', component: FormularioTemplateComponent},
   {path: 'confirmar', component: RegistroConfirmarComponent},
+  {path: 'reactivo', component: FormularioReactivoComponent},
   {path: '**', pathMatch: 'full', redirectTo: ''}
 ];
 
