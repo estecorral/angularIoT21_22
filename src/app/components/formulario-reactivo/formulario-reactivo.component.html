@@ -44,9 +44,11 @@
             <input
             type="password"
             formControlName="password2"
+            [class.is-invalid]="passwordInvalido"
             matInput>
-            <mat-error>Contraseña demasiado corta</mat-error>
+            <mat-error *ngIf="passwordInvalido">Las contraseñas no son iguales</mat-error>
         </mat-form-field>
+        <small *ngIf="passwordInvalido">Las contraseñas no son iguales</small>
 
         <mat-form-field appearance="outline">
             <mat-label>Teléfono</mat-label>

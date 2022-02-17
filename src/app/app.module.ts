@@ -31,7 +31,7 @@ import { FormularioReactivoComponent } from './components/formulario-reactivo/fo
     PuntuacionComponent,
     FormularioTemplateComponent,
     RegistroConfirmarComponent,
-    FormularioReactivoComponent
+    FormularioReactivoComponent,
   ],
   imports: [
     BrowserModule,

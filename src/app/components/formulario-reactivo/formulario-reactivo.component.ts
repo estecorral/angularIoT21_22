@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { PaisesService } from 'src/app/services/paises.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { ValidadoresService } from 'src/app/services/validadores.service';
 
 @Component({
   selector: 'app-formulario-reactivo',
@@ -30,7 +31,7 @@ export class FormularioReactivoComponent implements OnInit {
   }
 
   constructor(private formBuilder: FormBuilder, private paisesService: PaisesService,
-    private snackBar: MatSnackBar, private router: Router) {
+    private snackBar: MatSnackBar, private router: Router, private validadores: ValidadoresService) {
     if (this.router.getCurrentNavigation()?.extras.state) {
       const data = this.router.getCurrentNavigation()?.extras.state;
       this.datosRegistro = data?.['data'];
@@ -61,6 +62,8 @@ export class FormularioReactivoComponent implements OnInit {
        }),
        nacimiento: [this.datosRegistro.nacimiento, [Validators.required]],
        genero: [this.datosRegistro.genero, Validators.required],
+     }, {
+       validators: [this.validadores.checkPasswords('password', 'password2')]
      });
   }
 
@@ -68,13 +71,12 @@ export class FormularioReactivoComponent implements OnInit {
 
   }
 
-  checkPassword(control: AbstractControl) {
-    if(control.get('password')?.value === control.get('password2')?.value){
-      return { equals: true };
-    } else {
-      return { equals: false };
-    }
+  get passwordInvalido() {
+    const password1 = this.formularioRegistro.get('password');
+    const password2 = this.formularioRegistro.get('password2');
+    return (password1?.value === password2?.value) ? false : true;
   }
+
   sendForm() {
     if(this.formularioRegistro.status === 'INVALID') {
       return;

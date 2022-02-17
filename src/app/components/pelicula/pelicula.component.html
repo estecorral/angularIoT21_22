@@ -1,4 +1,4 @@
-<mat-progress-bar mode="indeterminate" *ngIf="!pelicula"></mat-progress-bar>
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 <div class="pelicula" *ngIf="pelicula">
     <div class="cabecera" [ngStyle]="{'background-image': 'url('+ backUrl +')', 'background-size': 'cover'}">
         <div class="transparencia"></div>

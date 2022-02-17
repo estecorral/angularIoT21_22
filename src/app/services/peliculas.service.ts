@@ -33,9 +33,9 @@ export class PeliculasService {
   }
 
   getPeliculaData(id: string) {
-    const url = `${this.apiURL}${id}?${environment.apiKey}${this.language}`;
-    return this.httpClient.get(url);
-  }
+     const url = `${this.apiURL}${id}?${environment.apiKey}${this.language}`;
+     return this.httpClient.get(url); 
+    }
 
   getCredits(id: string) {
     const url = `${this.apiURL}${id}/credits?${environment.apiKey}${this.language}`;

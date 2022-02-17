@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PeliculasService } from 'src/app/services/peliculas.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-pelicula',
@@ -14,6 +15,7 @@ export class PeliculaComponent implements OnInit {
   pelicula: any;
   backUrl: string = '';
   credits: any;
+  loading = true;
   constructor(
     private route: ActivatedRoute,
     private peliculasService: PeliculasService,
@@ -35,6 +37,7 @@ export class PeliculaComponent implements OnInit {
         this.credits = data.cast;
         console.log(this.credits);
       });
+      this.loading = false;
     });
   }
   puntuacionUsuario(e: any) {
